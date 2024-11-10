@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "username": "Miki",
+    "email": "miki@example.com",
+    "age": 25,
+    "img": "https://randomuser.me/api/portraits/men/1.jpg"
+  },
+  {
+    "id": "2",
+    "username": "Meni",
+    "email": "mani@example.com",
+    "age": 30,
+    "img": "https://randomuser.me/api/portraits/men/75.jpg"
+  },
+  {
+    "id": "3",
+    "username": "Elia",
+    "email": "Alia@example.com",
+    "age": 22,
+    "img": "https://randomuser.me/api/portraits/men/6.jpg"
+  },
+  {
+    "id": "4",
+    "username": "Gad",
+    "email": "Gad@example.com",
+    "age": 35,
+    "img": "https://randomuser.me/api/portraits/men/4.jpg"
+  },
+  {
+    "id": "5",
+    "username": "Bobsponge",
+    "email": "Bobsponge@example.com",
+    "age": 20,
+    "img": "https://th.bing.com/th/id/OIP.AI0TOsapykO9B_hKfEhgoQHaID?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": "6",
+    "username": "Minion",
+    "email": "Minion@example.com",
+    "age": 20,
+    "img": "https://th.bing.com/th/id/OIP.2oQYlx_86icuvanl0x6u0AHaJI?rs=1&pid=ImgDetMain"
+  }
+]
