@@ -3,9 +3,11 @@ interface Props {
   subtitle: string;
 };
 
-const PageHeader = () => {
+const PageHeader = ({ title, subtitle }: Props) => {
   return (
-    <div className="title">
+    <div>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
     </div>
   )
 }

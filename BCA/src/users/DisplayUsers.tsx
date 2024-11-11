@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import PageHeader from "../components/PageHeader";
 
 interface User {
   id?: string;
@@ -7,7 +8,7 @@ interface User {
   email: string;
   age: number;
   img: string;
-}
+};
 
 interface Props {
   users: User[];
@@ -21,10 +22,8 @@ export default function DisplayUsers({ users, deleteUser, updateUser, addNewStar
 
   return (
     <>
-      <NavLink to={"/users/adduser"} className="add-user-link">
-        Add user
-      </NavLink>
-
+      <PageHeader title="" subtitle="" />
+      <NavLink to={"/users/adduser"} className="add-user-link">Add user</NavLink>
       <div className="card-list">
         {users.map((user) => (
           <div key={user.id} className="user-card">
@@ -42,7 +41,7 @@ export default function DisplayUsers({ users, deleteUser, updateUser, addNewStar
               <button onClick={() => { updateUser(user); }} >
                 <NavLink to={`/users/edit/${user.id}`}>Edit</NavLink>
               </button>
-              <button onClick={() => { deleteUser(user.username); }} className="star-button">
+              <button onClick={() => { deleteUser(user.id!); }} className="star-button">
                 Delelte
               </button>
             </div>

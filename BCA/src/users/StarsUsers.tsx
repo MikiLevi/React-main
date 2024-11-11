@@ -1,36 +1,26 @@
-interface User {
-  id?: string;
-  username: string;
-  email: string;
-  age: number;
-  img: string;
-}
-interface Props {
-  users: User[];
-}
+import { useContext } from "react"
+import { starContext } from "../provider/StarProvider"
 
-export default function StarsUsers({ users }: Props) {
+export const StarsUsers = () => {
+
+  const { stars, setStars } = useContext(starContext)
+
   return (
     <>
-      <h1>הכוכבים של מיקי!</h1>
-      <div
-        className="card-list"
-        style={{ backgroundColor: users.length === 5 ? "red" : "magenta" }}
-      >
-        {users.map((user) => (
-          <div key={user.id} className="card">
-            <h3>{user.username}</h3>
-            <p>Email: {user.email}</p>
-            <p>Age: {user.age}</p>
-            <img
-              src={user.img}
-              alt={`${user.username}'s avatar`}
-              style={{ width: "100px", height: "100px" }}
-            />
-            <h1 style={{ display: users.length === 5 ? "block" : "none" }}></h1>
+      <h1>My Stars⭐✨🌠🌟</h1>
+      <div className="card-list">
+        {stars.map((star) => (
+          <div key={star.id} className="card">
+            <h3>User Name: {star.username}</h3>
+            <p>Email: {star.email}</p>
+            <p>Age: {star.img}</p>
+            <img src={star.img} alt={star.username} />
+            <button>Delete</button>
           </div>
         ))}
       </div>
     </>
-  );
+  )
 }
+
+export default StarsUsers

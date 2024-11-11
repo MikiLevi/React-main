@@ -10,12 +10,13 @@ export default function Header() {
             <Link_nav_bar to="/" InnerText="Home" />
           </li>
           <li className="li">
-            {" "}
-            <Link_nav_bar to="/users" InnerText="Users" />
+            <Link_nav_bar to="/about" InnerText="About" />
           </li>
           <li className="li">
-            {" "}
-            <Link_nav_bar to="/about" InnerText="About" />
+            <Link_nav_bar to="/display" InnerText="Display" />
+          </li>
+          <li className="li">
+            <Link_nav_bar to="/login" InnerText="Login" />
           </li>
         </ul>
       </header>

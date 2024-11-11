@@ -1,44 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { UserContext } from "../provider/UserProvider";
 
-interface User {
-  id?: string;
-  username: string;
-  email: string;
-  age: number;
-  img: string;
-}
-
-interface Props {
-  user: User;
-  editUser: (user: User) => void;
-}
-
-const EditUser: React.FC<Props> = ({ user, editUser }: Props) => {
+const EditUser: React.FC = () => {
+  const { users, setUsers } = useContext(UserContext)
   const { id } = useParams();
+
   const navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState(0);
   const [img, setImg] = useState("");
 
   useEffect(() => {
-    setUsername(user.username);
-    setEmail(user.email);
-    setAge(user.age);
-    setImg(user.img);
+    const findTheUser = users.find((u) => u.id === id)
+    if (findTheUser) {
+      setUsername(findTheUser.username);
+      setEmail(findTheUser.email);
+      setAge(findTheUser.age);
+      setImg(findTheUser.img);
+    }
   }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    editUser({
-      id,
-      username,
-      email,
-      age,
-      img,
-    });
-    navigate("/users");
+    setUsers((prevUsers) =>
+      prevUsers.map((user) =>
+        user.id === id ? { ...user, username, email, age, img } : user))
+    navigate("/display");
   };
   return (
     <>

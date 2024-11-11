@@ -1,71 +1,66 @@
-import { useEffect, useState } from "react";
-import { v4 } from "uuid";
-import NewUser from "./NewUser";
-import DisplayUsers from "./DisplayUsers";
+// import { useContext, useEffect, useState } from "react";
+// import { v4 } from "uuid";
+// import NewUser from "./NewUser";
+// import DisplayUsers from "./DisplayUsers";
 import { Route, Routes } from "react-router-dom";
 import EditUser from "./EditUser";
-import ErrrorPages from "../pages/ErrrorPages";
-import Login from "../pages/Login";
-interface User {
-  id?: string;
-  username: string;
-  email: string;
-  age: number;
-  img: string;
-}
+// import ErrrorPages from "../pages/ErrrorPages";
+// import Login from "../pages/Login";
+// // import { UserContext } from "../provider/UserProvider";
+
+// interface User {
+//   id?: string;
+//   username: string;
+//   email: string;
+//   age: number;
+//   img: string;
+// }
 
 export default function Users() {
-  const [users, setusers] = useState<User[]>([]);
-  const [stars, setStars] = useState<User[]>([]);
-  const [user, setuser] = useState<User>();
+  // const { users, setUsers } = useContext(UserContext)
+  // const [stars, setStars] = useState<User[]>([]);
+  // const [user, setuser] = useState<User>();
 
-  useEffect(() => {
-    fetch("/data.json")
-      .then((response) => response.json())
-      .then((data) => setusers(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  // useEffect(() => {
+  //   fetch("/data.json")
+  //     .then((response) => response.json())
+  //     .then((data) => setusers(data))
+  //     .catch((error) => console.error("Error fetching data:", error));
+  // }, []);
 
-  const addNewUser = (newUser: User) => {
-    newUser.id = v4();
-    setusers([...users, newUser]);
-  };
+  // const addNewUser = (newUser: User) => {
+  //   newUser.id = v4();
+  //   setUsers([...users, newUser]);
+  // };
 
-  const deleteUser = (id: string) => {
-    setusers(users.filter((user) => user.id !== id));
-  };
-  const UpdateUser = (updatedUser: User) => {
-    setusers((prevUsers) =>
-      prevUsers.map((userName) =>
-        userName.id === updatedUser.id ? { ...userName, ...updatedUser } : userName
-      )
-    );
-  };
+  // const deleteUser = (id: string) => {
+  //   setUsers(users.filter((user) => user.id !== id));
+  // };
 
-  const updateSetUser = (user: User) => {
-    setuser(user);
-  };
-  const addNewStar = (newStar: User) => {
-    setStars([...stars, newStar]);
-  };
+
+
+  // const updateSetUser = (user: User) => {
+  //   setuser(user);
+  // };
+
+  // const addNewStar = (newStar: User) => {
+  //   setStars([...stars, newStar]);
+  // };
   return (
     <>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <DisplayUsers
-              users={users}
-              deleteUser={deleteUser}
-              updateUser={updateSetUser}
-              addNewStar={addNewStar}
-            />
-          }
+        {/* <Route path="/" element={<DisplayUsers
+          users={users}
+          deleteUser={deleteUser}
+          updateUser={updateSetUser}
+          addNewStar={addNewStar}
         />
-        <Route path="/adduser" element={<NewUser addUser={addNewUser} />} />
-        <Route path="/edit/:id" element={<EditUser user={user!} editUser={UpdateUser} />} />
-        <Route path="*" element={<ErrrorPages />} />
-        <Route path="/login" element={<Login />} />
+        }
+        /> */}
+        {/* <Route path="/adduser" element={<NewUser addUser={addNewUser} />} /> */}
+        <Route path="/edit/:id" element={<EditUser />} />
+        {/* <Route path="*" element={<ErrrorPages />} />
+        <Route path="/login" element={<Login />} /> */}
       </Routes>
     </>
   );

@@ -94,7 +94,7 @@ input[type="number"] {
 
 button {
   padding: 12px 20px;
-  background-color: #007acc;
+  background-color: #0c94ef;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -127,17 +127,13 @@ button:active {
 
 .add-user-link:hover {
   background-color: #d2f72e;
+  color: #4CAF50;
 }
 
-.login {
-  background-color: #4CAF50;
-  transition: background-color 0.5s ease;
-}
-
-.login:hover {
+/* .login:hover {
   cursor: pointer;
   background-color: #18f4f4;
-}
+} */
 
 .card-list {
   display: grid;
@@ -147,6 +143,10 @@ button:active {
   justify-items: center;
   margin: 0 auto;
   max-width: 1200px;
+}
+.edit{
+  margin: 2px;
+  
 }
 
 /* עיצוב כרטיס המשתמש */
@@ -165,7 +165,10 @@ button:active {
 
 .user-card:hover {
   transform: translateY(-5px);
+  background-color: #82e9e9;
+  transition: background-color 0.9s ease;
 }
+
 
 /* עיצוב תמונת המשתמש */
 .user-avatar {
@@ -201,7 +204,7 @@ button:active {
 
 .edit-button,
 .star-button {
-  background-color: #4CAF50;
+  background-color: #ed4e14;
   color: white;
   padding: 8px 15px;
   border: none;
@@ -212,7 +215,8 @@ button:active {
 
 .edit-button:hover,
 .star-button:hover {
-  background-color: #d5ed4c;
+  transition: background-color 0.9s ease;
+  background-color: #86f508;
 }
 
 /* תמיכה במסכים קטנים */
